@@ -1,7 +1,12 @@
 #include<iostream>
+#include<cstdlib>
+
 #include "TParam.h"
 
 int main() {
+
+	srand(time(0));
+
 	TParam param1{ 1, 4, 2, 5 };
 	TParam param2{ 8, 12, 1, 1 };
 	TParam param3{ 30, 120, 5, 5 };
