@@ -16,6 +16,18 @@ TParam::TParam(double x_start, double x_end, double dx, double val)
 	name = "";
 	set_val(val);
 }
+TParam::TParam(std::string name, double x_start, double x_end, double dx)
+{
+	set_range(x_start, x_end, dx);
+	this->name = name;
+	val_id = 0;
+}
+TParam::TParam(std::string name, double x_start, double x_end, double dx, double val)
+{
+	set_range(x_start, x_end, dx);
+	this->name = name;
+	set_val(val);
+}
 
 void TParam::set_range(double x_start, double x_end, double dx)
 {
@@ -32,8 +44,17 @@ int TParam::get_val_Id(double val) {
 		double x = x_start;
 		int _id = 0;
 		while (fabs(x + _id * dx - val) > dx / 2) _id++;
-		
+
 		return _id;
 
 	}
 }
+	
+void TParam::info() {
+	cout << "\n";
+	cout << "=======================" << "\n";
+	cout << "Name: " << name << "\n";
+	cout << "Range: [" << x_start << "; " << x_end << "; " << dx << "] \n";
+	cout << "Value: " << get_val() << " \t (id: #" << val_id << ")\n";
+	cout << "=======================" << "\n";
+	}
