@@ -2,6 +2,7 @@
 #include<cstdlib>
 
 #include "TParam.h"
+#include "TCandidate.h"
 
 int main() {
 
@@ -26,6 +27,11 @@ int main() {
 	param2.info();
 	std::cout << "param3\n";
 	param3.info();
+
+	TCandidate os1{};
+
+	os1.rate();
+	os1.info();
 
 	return 0;
 }

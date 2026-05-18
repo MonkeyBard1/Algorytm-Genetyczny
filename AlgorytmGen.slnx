@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="AlgorytmGen/AlgorytmGen.vcxproj" />
+  <Project Path="AlgorytmGen/AlgorytmGen.vcxproj" Id="ac2ec29b-63af-48b4-b077-f99675bea249" />
 </Solution>

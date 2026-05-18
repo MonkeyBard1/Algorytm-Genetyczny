@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TCandidate.h" />
     <ClInclude Include="TParam.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TCandidate.cpp" />
     <ClCompile Include="TParam.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
