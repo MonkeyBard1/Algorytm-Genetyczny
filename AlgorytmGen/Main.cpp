@@ -3,6 +3,7 @@
 
 #include "TParam.h"
 #include "TCandidate.h"
+#include "TPopulation.h"
 
 int main() {
 
@@ -33,5 +34,14 @@ int main() {
 	os1.rate();
 	os1.info();
 
+	TPopulation pop{ 10 };
+	std::cout << "BEFORE CALCULATE\n";
+	pop.info();
+
+	pop.calculate();
+	std::cout << "AFTER CALCULATE\n";
+	pop.info();
+	
+	pop.get_best_candidate_info();
 	return 0;
 }

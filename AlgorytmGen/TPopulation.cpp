@@ -1,0 +1,50 @@
+#include "TPopulation.h"
+#include <iostream>
+#include <algorithm> // max
+
+using namespace std;
+
+TPopulation::TPopulation(unsigned int cands_count) {
+	candidate_count = cands_count;
+
+	for (int i = 0;i < cands_count;i++) candidates.push_back({});
+}
+
+void TPopulation::calculate() {
+	double best_val = 0.0;
+
+	for (int i = 0; i < candidate_count;i++)
+	{
+		candidates[i].rate();
+		double val = candidates[i].get_mark();
+		if (i == 0) best_val = val;
+		else best_val = max(best_val, val);
+	}
+	this->best_val = best_val;
+}
+
+	TCandidate TPopulation::get_best_candidate() {
+
+		int i=0;
+
+		while (candidates[i].get_mark() != best_val) i++;
+
+		return candidates[i];
+	}
+	void TPopulation::get_best_candidate_info() {
+		TCandidate best_cand = get_best_candidate();
+		best_cand.info();
+		cout << "best value: " << best_val << endl;
+	}
+	void TPopulation::info() {
+		cout << "\n\n";
+		cout << "==============================\n";
+		cout << "population size: " << candidate_count << "\n";
+		cout << "best val: " << best_val << "\n";
+
+		for (int i = 0; i < candidate_count;i++)
+		{
+			cout << "candidate " << i << ": " << candidates[i].get_mark() << endl;
+		}
+		cout << "==============================\n";
+	}
