@@ -4,10 +4,20 @@
 
 using namespace std;
 
+unsigned int TPopulation::_id = 0;
+
 TPopulation::TPopulation(unsigned int cands_count) {
 	candidate_count = cands_count;
 
+	_id++;
+
 	for (int i = 0;i < cands_count;i++) candidates.push_back({});
+}
+TPopulation::TPopulation(const TPopulation& original) {
+	unsigned int candidate_count = original.get_candidate_count();
+	double best_val = original.get_best_val();
+	_id++;
+	std::cout << "Utworzono kopie populacji #" << original.get_id() << " jako populacje #" << _id;
 }
 
 void TPopulation::calculate() {
@@ -22,6 +32,7 @@ void TPopulation::calculate() {
 	}
 	this->best_val = best_val;
 }
+
 
 	TCandidate TPopulation::get_best_candidate() {
 
@@ -41,6 +52,7 @@ void TPopulation::calculate() {
 		cout << "==============================\n";
 		cout << "population size: " << candidate_count << "\n";
 		cout << "best val: " << best_val << "\n";
+		cout << "POPULATION #" << _id << "\n";
 
 		for (int i = 0; i < candidate_count;i++)
 		{

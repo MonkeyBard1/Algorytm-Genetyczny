@@ -14,8 +14,10 @@ class TCandidate
 
 public:
 	TCandidate();
+	TCandidate(const TCandidate& original);
 
-	double get_mark() { return mark; }
+	double get_mark() const { return mark; }
+	TParam get_gentype() const { return genotype[GENS_COUNT]; }
 	void rate();
 
 	void info();

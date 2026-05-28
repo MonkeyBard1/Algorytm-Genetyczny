@@ -10,6 +10,9 @@ TCandidate::TCandidate()
 	mark = 0;
 	rand_gens_val();
 }
+TCandidate::TCandidate(const TCandidate& original) {
+	double mark = original.get_mark();
+}
 
 void TCandidate::rate() {
 	double x1 = genotype[0].get_val();

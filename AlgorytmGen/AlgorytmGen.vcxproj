@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TAlghoritm.h" />
     <ClInclude Include="TCandidate.h" />
     <ClInclude Include="TParam.h" />
     <ClInclude Include="TPopulation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TAlghoritm.cpp" />
     <ClCompile Include="TCandidate.cpp" />
     <ClCompile Include="TParam.cpp" />
     <ClCompile Include="TPopulation.cpp" />

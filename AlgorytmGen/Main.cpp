@@ -4,44 +4,18 @@
 #include "TParam.h"
 #include "TCandidate.h"
 #include "TPopulation.h"
+#include "TAlghoritm.h"
 
 int main() {
 
+	unsigned int candidates_count = 10;
+	unsigned int max_popualtion_count = 20;
+	unsigned int min_improvment_proc = 3;
+
 	srand(time(0));
 
-	TParam param1{ 1, 4, 2, 5 };
-	TParam param2{ 8, 12, 1, 1 };
-	TParam param3{ 30, 120, 5, 5 };
-
-	std::cout << "param1\n";
-	param1.info();
-	std::cout << "param2\n";
-	param2.info();
-	std::cout << "param3\n";
-	param3.info();
-
-	param2.set_val(100);
-	param3.set_val(7.5);
-	std::cout << "AFTER\n";
+	TAlghoritm task(candidates_count, max_popualtion_count, min_improvment_proc);
+	task.run();
 	
-	std::cout << "param2\n";
-	param2.info();
-	std::cout << "param3\n";
-	param3.info();
-
-	TCandidate os1{};
-
-	os1.rate();
-	os1.info();
-
-	TPopulation pop{ 10 };
-	std::cout << "BEFORE CALCULATE\n";
-	pop.info();
-
-	pop.calculate();
-	std::cout << "AFTER CALCULATE\n";
-	pop.info();
-	
-	pop.get_best_candidate_info();
 	return 0;
 }
