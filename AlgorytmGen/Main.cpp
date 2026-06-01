@@ -1,10 +1,14 @@
 #include<iostream>
 #include<cstdlib>
+#include<vector>
 
 #include "TParam.h"
 #include "TCandidate.h"
 #include "TPopulation.h"
 #include "TAlghoritm.h"
+
+#include "TCandidate_zad1.h"
+#include "TCandidate_zad2.h"
 
 int main() {
 
@@ -16,6 +20,54 @@ int main() {
 
 	TAlghoritm task(candidates_count, max_popualtion_count, min_improvment_proc);
 	task.run();
+
+	// Polmorfizm i funkcje wirtualne
+
+	std::cout << "\n\n\n";
+
+	std::vector<TCandidate*> candidates;
+
+	int cand_case;
+	int cand_num;
+
+	
+	std::cout << "Wybierz wariant kandydata (0-2): ";
+	std::cin >> cand_case;
+	std::cout << "Ile utworzyc osobnikow? ";
+	std::cin >> cand_num;
+
+	if (cand_case >= 0 && cand_case <= 2) {
+		for (int i = 0; i < cand_num; i++) {
+			switch (cand_case) {
+			case 0:
+				candidates.push_back(new TCandidate{});
+				std::cout << "Wariant " << cand_case << " - TCandidate. ID= " << i << std::endl;
+				candidates[i]->rate();
+				candidates[i]->info();
+				break;
+			case 1:
+				candidates.push_back(new TCandidate_zad1{});
+				std::cout << "Wariant " << cand_case << " - TCadnidate_zad1. ID= " << i << std::endl;
+				candidates[i]->rate();
+				candidates[i]->info();;
+				break;
+			case 2:
+				candidates.push_back(new TCandidate_zad2{});
+				std::cout << "Wariant " << cand_case << "- TCadnidate_zad2. ID= " << i << std::endl;
+				candidates[i]->rate();
+				candidates[i]->info();
+				break;
+			}
+		}
+		for (int i = 0; i < candidates.size(); i++) {
+			delete candidates[i];
+		}
+	}
+	else { std::cout << "Wprowadzono niepoprawne dane wejsciowe! \n"; }
+
+	
+	
+
 	
 	return 0;
 }

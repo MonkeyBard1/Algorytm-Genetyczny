@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClInclude Include="TAlghoritm.h" />
     <ClInclude Include="TCandidate.h" />
+    <ClInclude Include="TCandidate_zad1.h" />
+    <ClInclude Include="TCandidate_zad2.h" />
     <ClInclude Include="TParam.h" />
     <ClInclude Include="TPopulation.h" />
   </ItemGroup>
@@ -28,6 +30,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TAlghoritm.cpp" />
     <ClCompile Include="TCandidate.cpp" />
+    <ClCompile Include="TCandidate_zad1.cpp" />
+    <ClCompile Include="TCandidate_zad2.cpp" />
     <ClCompile Include="TParam.cpp" />
     <ClCompile Include="TPopulation.cpp" />
   </ItemGroup>
