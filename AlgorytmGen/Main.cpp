@@ -9,6 +9,7 @@
 
 #include "TCandidate_zad1.h"
 #include "TCandidate_zad2.h"
+#include "TCandidate_zad3.h"
 
 int main() {
 
@@ -16,9 +17,13 @@ int main() {
 	os_zad1.rate();
 	os_zad1.info();
 
-	TCandidate_zad1 os_zad2;
+	TCandidate_zad2 os_zad2;
 	os_zad2.rate();
 	os_zad2.info();
+
+	TCandidate_zad3 os_zad3;
+	os_zad3.rate();
+	os_zad3.info();
 
 
 	//unsigned int candidates_count = 10;

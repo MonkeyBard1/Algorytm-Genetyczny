@@ -14,13 +14,16 @@ public:
 
 		mark = 2 * (x1 + x2);
 	}
+
+	TCandidate* create() {
+		return new TCandidate_zad1();
+	}
+	TCandidate* create_copy() const {
+		return new TCandidate_zad1{ *this };
+	}
+
 protected:
 	void init_vector();
 };
 
-void TCandidate_zad1::init_vector() {
-	genotype.push_back({ "x1",0,100,1 });
-	genotype.push_back({ "x2",0,10,1 });
 
-	gens_count = genotype.size();
-}
