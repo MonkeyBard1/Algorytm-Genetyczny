@@ -16,7 +16,7 @@ int main() {
 	os_zad1.rate();
 	os_zad1.info();
 
-	TCandidate_zad1 os_zad2;
+	TCandidate_zad2 os_zad2;
 	os_zad2.rate();
 	os_zad2.info();
 

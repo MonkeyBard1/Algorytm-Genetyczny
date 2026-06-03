@@ -5,7 +5,11 @@
 class TCandidate_zad1 : public TCandidate 
 {
 public:
-	TCandidate_zad1() : TCandidate() { init_vector(); }
+	TCandidate_zad1() : TCandidate() 
+	{ 
+		init_vector();
+	}
+
 	TCandidate_zad1(const TCandidate_zad1& original) : TCandidate(original) {}
 
 	void rate() {

@@ -30,8 +30,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TAlghoritm.cpp" />
     <ClCompile Include="TCandidate.cpp" />
-    <ClCompile Include="TCandidate_zad1.cpp" />
-    <ClCompile Include="TCandidate_zad2.cpp" />
     <ClCompile Include="TParam.cpp" />
     <ClCompile Include="TPopulation.cpp" />
   </ItemGroup>
