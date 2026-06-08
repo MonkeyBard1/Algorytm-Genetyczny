@@ -1,6 +1,7 @@
 #include "TPopulation.h"
 #include <iostream>
 #include <algorithm> // max
+#include <array>
 
 using namespace std;
 
@@ -71,16 +72,35 @@ void TPopulation::calculate() {
 		return candidates[id];
 	}
 
-	TPopulation* TPopulation::rulette(TPopulation* orginal) {
-		std::vector<int> slots;
-		int prev_id = 0;
-		int pres_id = 0;
-		for (int i = 0; i < this->candidates.size(); i++) {
-			pres_id = candidates[i]->get_mark();
-			for (int j = 0; j < candidates[i]->get_mark(); j++) {
-				slots[j + prev_id] = i;
-			}
-			prev_id = pres_id;
+	std::array<TCandidate*, 2> TPopulation::roulette()
+	{
+		if (candidates.size() < 2) {
+			throw std::runtime_error("Za malo kandydatow");
 		}
 
+		int sum = 0;
+
+		for (int i = 0; i < candidates.size(); i++) {
+			sum += candidates[i]->get_mark();
+		}
+
+
+		std::array<TCandidate*, 2> chosen;
+
+		for (int k = 0; k < 2; k++) {
+			int random_value = rand() % sum + 1;
+
+			int current_sum = 0;
+
+			for (int i = 0; i < candidates.size(); i++) {
+				current_sum += candidates[i]->get_mark();
+
+				if (random_value <= current_sum) {
+					chosen[k] = candidates[i];
+					break;
+				}
+			}
+		}
+
+		return chosen;
 	}

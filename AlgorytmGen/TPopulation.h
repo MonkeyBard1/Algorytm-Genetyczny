@@ -26,7 +26,7 @@ public:
 
 	void info();
 
-	TPopulation* rulette(TPopulation* original);
+	std::array<TCandidate*, 2> roulette();
 
 	const TCandidate* get_candidate_wsk(int id) const;
 };

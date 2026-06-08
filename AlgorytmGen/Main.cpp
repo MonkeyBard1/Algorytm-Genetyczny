@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<vector>
+#include<array>
 
 #include "TParam.h"
 #include "TCandidate.h"
@@ -24,7 +25,17 @@ int main() {
 	TCandidate_zad3 os_zad3;
 	os_zad3.rate();
 	os_zad3.info();
-
+	
+	std::cout << "Ruletka: ";
+	unsigned int x = 20;
+	TPopulation pop ( x , new TCandidate_zad1);
+	pop.calculate();
+	std::array<TCandidate*, 2> parents;
+	parents = pop.roulette();
+	TCandidate* parent1 = parents[0];
+	TCandidate* parent2 = parents[1];
+	parent1->info();
+	parent2->info();
 
 	//unsigned int candidates_count = 10;
 	//unsigned int max_popualtion_count = 20;
